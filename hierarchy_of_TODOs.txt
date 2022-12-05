@@ -1,0 +1,32 @@
+My code is full of "TODO" comments, and they're kinda useless, because there are so many of them and most of them are low priority and I pretty much never go back to look at them.
+Therefore, I've recently developed a hierarchy of labels to use instead of "TODO".  So far, they seem to be helpful.
+
+labels, descending order of urgency
+  NEXT - reminder to work on this code next.  I impotently beg you not to leave these lying around more than a day.
+  CRASH - this code will crash or deadlock
+  BCRASH - this code will crash or deadlock under fairly common circumstances
+  DUMMY - stubbed features, guessed formulae, easy but incorrect behavior, etc.
+  CHECK - something seems potentially CRASH (anything higher than CHECK, really), but I can't spare the braincells to think about it, or need experimental evidence
+  SECURITY - security hole
+  LEAK - slow memory leaks, zombie threads, things that could EVENTUALLY cause a crash
+  RAINY - "'should' do" things that I may actually do (on, say, a rainy day)
+  THINK - something seems weird or may have a better solution, but I can't spare the braincells to think about it, or need experimental evidence
+  SHAME - "'should' do" things I will probably never do
+  MISC - probably won't ever fix
+  
+  DITTO - "same as elsewhere": ideally it's obvious from where.  "DITTO" consequently doesn't itself have a level, really.  (should these places even get a comment?)
+  PERIODIC - persistent; check it again e.g. before shipping a release
+
+
+There's a lot of overlap.  The difference between e.g. DUMMY and RAINY may just depend on whether you consider the missing function an (acceptably permanent) imperfection or a temporary stopgap while you get stuff working.  If the "correct" level seems too low or too high, kludge it into the most appropriate one closer to where you think it should be.
+
+If you put more than one label on a line, put the most urgent ones first, and // each, like:
+  //NEXT //SECURITY //THINK Is this an injection attack?  just a second while I commit code
+  ...not that you need to use more than one label at a time, generally.
+
+//BLAH blah blah
+// - additional info
+
+
+Uh, this document released under the MIT license, I guess.
+-Erhannis
